@@ -941,25 +941,27 @@
 						"exec": [
 							""
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
 					}
 				},
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
+							"pm.test(\"Status code is 200\", () => {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
-							"pm.test(\"Response code is 200\", function () {\r",
+							"pm.test(\"Response code is 200\",  () => {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.responseCode).to.eql(200);\r",
 							"});\r",
-							"pm.test(\"Response must have a body\", function () {\r",
+							"pm.test(\"Response must have a body\", () => {\r",
 							"     pm.response.to.be.withBody;\r",
 							"     pm.response.to.be.json;\r",
 							"});\r",
-							"pm.test(\"Body matches string\", function () {\r",
+							"pm.test(\"Body matches string\",  () => {\r",
 							"    pm.expect(pm.response.text()).to.include(\"user\");\r",
 							"    pm.expect(pm.response.text()).to.include(\"id\");\r",
 							"    pm.expect(pm.response.text()).to.include(\"name\");\r",
@@ -979,7 +981,9 @@
 							"    pm.expect(pm.response.text()).to.include(\"zipcode\");\r",
 							"});"
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
 					}
 				}
 			],

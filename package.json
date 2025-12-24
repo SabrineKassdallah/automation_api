@@ -1,0 +1,28 @@
+{
+  "name": "automation-exercise-api-testing",
+  "version": "1.0.0",
+  "description": "Automated API tests for AutomationExercise using Postman and Newman",
+  "main": "index.js",
+  "scripts": {
+    "test": "newman run AutomationExercise_API_Testing.postman_collection.json -e AutomationExercise.postman_environment.json --reporters cli",
+    "test:html": "newman run AutomationExercise_API_Testing.postman_collection.json -e AutomationExercise.postman_environment.json --reporters cli,html --reporter-html-export newman-report.html",
+    "test:json": "newman run AutomationExercise_API_Testing.postman_collection.json -e AutomationExercise.postman_environment.json --reporters cli,json --reporter-json-export newman-results.json",
+    "test:all": "newman run AutomationExercise_API_Testing.postman_collection.json -e AutomationExercise.postman_environment.json --reporters cli,json,junit,html --reporter-json-export test-results/newman-results.json --reporter-junit-export test-results/newman-results.xml --reporter-html-export test-results/newman-report.html",
+    "test:verbose": "newman run AutomationExercise_API_Testing.postman_collection.json -e AutomationExercise.postman_environment.json --reporters cli --verbose"
+  },
+  "keywords": [
+    "api",
+    "testing",
+    "automation",
+    "postman",
+    "newman",
+    "ci-cd"
+  ],
+  "author": "Sabrine",
+  "license": "MIT",
+  "devDependencies": {
+    "newman": "^6.1.0",
+    "newman-reporter-html": "^1.0.5",
+    "newman-reporter-junitxml": "^2.6.0"
+  }
+}
